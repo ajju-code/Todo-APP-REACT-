@@ -5,7 +5,7 @@ function AddTodo({ onNewitem }) {
   const [todoname, settodoname] = useState("");
 
   const [duedate, setduedate] = useState("");
-
+  // dnodw
   const handlename = (ev) => {
     settodoname(ev.target.value);
   };
