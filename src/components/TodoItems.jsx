@@ -1,6 +1,12 @@
 import TodoItem from "./TodoItem";
+import { useContext } from "react";
+import { TodoItemsContext } from "../store/Todo_itemsContext";
 import sty from "./TodoItems.module.css";
-const TodoItems = ({ todoItems, onDeleteclick }) => {
+
+const TodoItems = ({}) => {
+  const { todoItems } = useContext(TodoItemsContext);
+  console.log(todoItems);
+
   return (
     <>
       <div className={sty.itemsContainer}>
@@ -9,7 +15,6 @@ const TodoItems = ({ todoItems, onDeleteclick }) => {
             key={items.name}
             todoName={items.name}
             tododate={items.due_date}
-            onDeleteclick={onDeleteclick}
           />
         ))}
       </div>

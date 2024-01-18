@@ -1,7 +1,11 @@
 import { useRef } from "react";
 import { BiMessageAdd } from "react-icons/bi";
+import { useContext } from "react";
+import { TodoItemsContext } from "../store/Todo_itemsContext";
 
-function AddTodo({ onNewitem }) {
+function AddTodo({}) {
+  const Contextobj = useContext(TodoItemsContext);
+  const addNewItems = Contextobj.addNewItems;
   const todoName_ele = useRef();
   const todoDate_ele = useRef();
 
@@ -12,7 +16,7 @@ function AddTodo({ onNewitem }) {
     todoName_ele.current.value = "";
     todoDate_ele.current.value = "";
     console.log(`${todoName_ele}`);
-    onNewitem(todoName, todoDate);
+    addNewItems(todoName, todoDate);
   };
 
   return (
